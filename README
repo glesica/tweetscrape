@@ -1,0 +1,41 @@
+Program: tweetscrape.py
+Author: George Lesica
+Description:  A simple Python program for scraping Twitter using the search API
+License: Public Domain (program is pretty trivial at this point)
+
+ABOUT
+
+Program permits scraping Twitter using the search API for a set of subjects and queries related to those subjects. It is being written to build a simple research dataset. It is meant to be run as a cron job to collect the latest search results for a set of queries every so often. Requires tweepy (http://github.com/joshthecoder/tweepy)
+
+GENERAL USAGE
+
+Usage: python movietwitter.py [OPTION]... COMMAND [ARGUMENTS]...
+
+Standalone options:
+  -h, --help               Print this help information
+
+Other options:
+  -d, --database=FILE      Use Sqlite3 database FILE
+
+Commands:
+  list                     List current topics and queries (with id numbers)
+  add TOPIC QUERY          Add a new topic and query (checks for duplicates)
+  remove ID | all          Removes query by its database id or all queries
+  activate ID              Activates topic by its id
+  deactivate ID            Deactivates topic by its id
+
+  Commands that take an id number may also take a comma-delimited list of id numbers.
+
+EXAMPLE USE
+
+$ python tweetscrape.py add "Coca-Cola" "coke"
+$ python tweetscrape.py add "Coca-Cola" "coca cola"
+$ python tweetscrape.py list
+   ID                          Movie                   Query String    Active?
+    1                      Coca-Cola                           coke          1
+    2                      Coca-Cola                      coca cola          1
+$ python tweetscrape.py
+Inserting row: coke 14412195597
+...
+Inserting row: coca cola 14409520161
+

@@ -31,7 +31,7 @@ EXAMPLE USE
 $ python tweetscrape.py add "Coca-Cola" "coke"
 $ python tweetscrape.py add "Coca-Cola" "coca cola"
 $ python tweetscrape.py list
-   ID                          Movie                   Query String    Active?
+   ID                          Topic                   Query String    Active?
     1                      Coca-Cola                           coke          1
     2                      Coca-Cola                      coca cola          1
 $ python tweetscrape.py
